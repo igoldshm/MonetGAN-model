@@ -52,6 +52,7 @@ The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 ### Loss function tunning
 #### Identity loss weight (lambda)
 ⚠️ Low Identity Lambda Warning
+
 Setting identity_lambda = 0.5 is insufficient to preserve structural details during training.
 This results in image degradation, visible as black blobs or structure collapse (see yellow arrows in the right bottom image).
 The generator ignores the original image's structure or key features and replaces those areas with "safe" pixels that can fool the discriminator more easily.
