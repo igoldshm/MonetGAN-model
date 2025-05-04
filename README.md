@@ -51,7 +51,7 @@ The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 ## Results
 ### Loss function tunning
 ### Identity loss weight (lambda)
-In our project, we experimented with different identity loss lambda values to find the optimal setting for the best visual results. We observed that increasing the lambda value caused the generated samples to resemble the original images from domain A more closely, while decreasing it produced outputs that were more stylized and resembled Monet paintings. This behavior aligned with the general assumption about the role of the identity loss function — to prevent over-stylizing an input image if it is already in the correct target domain.
+In our project, we experimented with different identity loss lambda values to find the optimal setting for the best visual results. We observed that increasing the lambda value caused the generated samples to resemble the original images from domain A more closely, while decreasing it produced outputs that were more stylized and resembled Monet paintings (domain B). This behavior aligned with the general assumption about the role of the identity loss function, to prevent over-stylizing an input image if it is already in the correct target domain.
 
 ### **Results Preview**
 | Identity lambda = 0.5 | Identity lambda = 1.5 |
