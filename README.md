@@ -51,6 +51,19 @@ The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 ## Results
 ### Loss function tunning
 #### Identity loss weight (lambda)
+
+
+## **Inputs Preview**
+| Initial Content image | Initial Style Image |
+|:-----------------------------:|:--------------------------------:|
+| ![Identity lambda = 0.5](content_cropped.jpg)      | ![Identity lambda = 1.5](style_crop.jpg)   |
+
+
+## **Results Preview**
+| Step 0 (Initial Random Noise) | Step 7000 (Final Stylized Image) |
+|:-----------------------------:|:--------------------------------:|
+| ![Identity lambda = 3](result_0.png)       | ![Identity lambda = 9](result_7000.png)   |
+
 ⚠️ Low Identity Lambda Warning
 
 Setting identity_lambda = 0.5 is insufficient to preserve structural details during training.
