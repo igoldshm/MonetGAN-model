@@ -56,7 +56,7 @@ In our project, we experimented with different identity loss lambda values to fi
 ### **Results Preview**
 | Identity lambda = 0.5 | Identity lambda = 1.5 |
 |:-----------------------------:|:--------------------------------:|
-| ![Identity_lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1 ](image.png)      | ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](image.png)   |
+| ![Identity_lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](image.png)      | ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](image.png)   |
 
 | Identity lambda = 3 | Identity lambda = 9 |
 |:-----------------------------:|:--------------------------------:|
