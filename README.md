@@ -56,11 +56,11 @@ In our project, we experimented with different identity loss lambda values to fi
 ### **Results Preview**
 | Real Photo | Identity lambda = 0.5 |
 |:-----------------------------:|:--------------------------------:|
-| ![Input smaple image from domain A](Real_photo.png)      | ![Identity lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_0.5_VGG_0.png.png)   |
+| ![Input smaple image from domain A](Real_photo.png)      | ![Identity lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_0.5_VGG_0.png)   |
 
 | Identity lambda = 1.5 | Identity lambda = 4.5 |
 |:-----------------------------:|:--------------------------------:|
-| ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png.png)       | ![Identity lambda = 4.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_4.5_VGG_0.png)   |
+| ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png)       | ![Identity lambda = 4.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_4.5_VGG_0.png)   |
 
 ⚠️ Low Identity Lambda Warning
 
