@@ -54,13 +54,13 @@ The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 In our project, we experimented with different identity loss lambda values to find the optimal setting for the best visual results. We observed that increasing the lambda value caused the generated samples to resemble the original images from domain A more closely, while decreasing it produced outputs that were more stylized and resembled Monet paintings (domain B). This behavior aligned with the general assumption about the role of the identity loss function, to prevent over-stylizing an input image if it is already in the correct target domain.
 
 ### **Results Preview**
-| Identity lambda = 0.5 | Identity lambda = 1.5 |
+| Real Photo | Identity lambda = 0.5 |
 |:-----------------------------:|:--------------------------------:|
-| ![Identity_lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](image.png)      | ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](image.png)   |
+| ![Input smaple image from domain A](Real_photo.png)      | ![Identity lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_0.5_VGG_0.png.png)   |
 
-| Identity lambda = 3 | Identity lambda = 9 |
+| Identity lambda = 1.5 | Identity lambda = 4.5 |
 |:-----------------------------:|:--------------------------------:|
-| ![Identity lambda = 3, Cycle_lambda = 10, adversarial_lambda = 1](image.png)       | ![Identity lambda = 9, Cycle_lambda = 10, adversarial_lambda = 1](image.png)   |
+| ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png.png)       | ![Identity lambda = 4.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_4.5_VGG_0.png)   |
 
 ⚠️ Low Identity Lambda Warning
 
