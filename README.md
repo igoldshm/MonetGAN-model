@@ -65,8 +65,12 @@ In our project, we experimented with different identity loss lambda values to fi
 ⚠️ Low Identity Lambda Warning
 
 Setting identity_lambda = 0.5 is insufficient to preserve structural details during training.
-This results in image degradation, visible as black blobs or structure collapse (see yellow arrows in the right top image, lambda = 0.5).
+This results in image degradation, visible as black blobs or structure collapse (see white arrows in the right top image, lambda = 0.5).
 The generator ignores the original image's structure or key features and replaces those areas with "safe" pixels that can fool the discriminator more easily.
+
+Conclusion
+
+After testing various values, we found that the best visual results were achieved when the identity loss weight, lambda_identity, was set to 1.5.
 
 ## License
 This project is licensed under the MIT License.
