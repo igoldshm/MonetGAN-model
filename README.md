@@ -32,10 +32,11 @@ In CycleGAN, there are two generators: one that converts real photos into fake M
 ### Discriminator  implementation
 ### Loss calculation
 #### Generator loss
-The generator loss is the sum of three different losses:
+The generator loss is the sum of four different losses:
 - Adversarial loss - the aim of the generator is to fool the discriminator -> pred(fake monet)=1 (MSELoss)
 - Identity loss - Monet → Monet should remain unchanged (L1Loss)
 - Cycle Consistency Loss - Loss for reconstructing photo from fake Monet. Real → Monet → Real (L1Loss)
+- Perceptual Loss – Developed a customized CycleGAN model integrated with a perceptual loss function based on a pretrained VGG19 architecture, enhancing the model’s ability to preserve high-level features during style transfer (such as brush strokes), in contrast to the lower-level pixel comparisons performed by identity, cycle-consistency, and adversarial losses.
 ##### LAMBDA optimization
 - We have been expirimenting with different values for the weights of each loss (LAMBDA) to get the best visual outcome.
 #### Discriminator loss
