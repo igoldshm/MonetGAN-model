@@ -72,8 +72,8 @@ The goal is to find the best balance between **cycle consistency**, **identity p
 
 ## Notes
 
-* **Visual quality** was judged subjectively by human inspection for this phase.
+* **Visual quality** was judged subjectively (human inspection) for this phase.
 * Experiments were conducted on images with a resolution of **256×256** pixels.
-* No numerical metrics (e.g., FID) were used in this round — a separate file will cover quantitative evaluation.
+* No numerical metrics (e.g., FID) were used in this round, a separate file will cover quantitative evaluation.
 
 ---
