@@ -32,10 +32,11 @@ In CycleGAN, there are two generators: one that converts real photos into fake M
 ### Discriminator  implementation
 ### Loss calculation
 #### Generator loss
-The generator loss is the sum of three different losses:
+The generator loss is the sum of four different losses:
 - Adversarial loss - the aim of the generator is to fool the discriminator -> pred(fake monet)=1 (MSELoss)
 - Identity loss - Monet → Monet should remain unchanged (L1Loss)
 - Cycle Consistency Loss - Loss for reconstructing photo from fake Monet. Real → Monet → Real (L1Loss)
+- Perceptual Loss – Developed a customized CycleGAN model integrated with a perceptual loss function based on a pretrained VGG19 architecture, enhancing the model’s ability to preserve high-level features during style transfer (such as brush strokes), in contrast to the lower-level pixel comparisons performed by identity, cycle-consistency, and adversarial losses.
 ##### LAMBDA optimization
 - We have been expirimenting with different values for the weights of each loss (LAMBDA) to get the best visual outcome.
 #### Discriminator loss
@@ -47,6 +48,30 @@ The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 - Epochs = 200
 - LAMBDA_CYCLE = 1  (Weight for cycle consistency loss)
 - LAMBDA_IDENTITY = 1  (Weight for identity loss)
+
+## Results
+### Loss function tunning
+### Identity loss weight (lambda)
+In our project, we experimented with different identity loss lambda values to find the optimal setting for the best visual results. We observed that increasing the lambda value caused the generated samples to resemble the original images from domain A more closely, while decreasing it produced outputs that were more stylized and resembled Monet paintings (domain B). This behavior aligned with the general assumption about the role of the identity loss function, to prevent over-stylizing an input image if it is already in the correct target domain.
+
+### **Results Preview**
+| Real Photo | Identity lambda = 0.5 |
+|:-----------------------------:|:--------------------------------:|
+| ![Input smaple image from domain A](Real_photo.png)      | ![Identity lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_0.5_VGG_0.png)   |
+
+| Identity lambda = 1.5 | Identity lambda = 4.5 |
+|:-----------------------------:|:--------------------------------:|
+| ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png)       | ![Identity lambda = 4.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_4.5_VGG_0.png)   |
+
+⚠️ Low Identity Lambda Warning
+
+Setting identity_lambda = 0.5 is insufficient to preserve structural details during training.
+This results in image degradation, visible as black blobs or structure collapse (see white arrows in the right top image, lambda = 0.5).
+The generator ignores the original image's structure or key features and replaces those areas with "safe" pixels that can fool the discriminator more easily.
+
+Conclusion
+
+After testing various values, we found that the best visual results were achieved when the identity loss weight, lambda_identity, was set to 1.5.
 
 ## License
 This project is licensed under the MIT License.
