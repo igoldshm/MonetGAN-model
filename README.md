@@ -38,7 +38,7 @@ The generator loss is the sum of four different losses:
 - Cycle Consistency Loss - Loss for reconstructing photo from fake Monet. Real → Monet → Real (L1Loss)
 - Perceptual Loss – Developed a customized CycleGAN model integrated with a perceptual loss function based on a pretrained VGG19 architecture, enhancing the model’s ability to preserve high-level features during style transfer (such as brush strokes), in contrast to the lower-level pixel comparisons performed by identity, cycle-consistency, and adversarial losses.
 ##### LAMBDA optimization
-- We have been expirimenting with different values for the weights of each loss (LAMBDA) to get the best visual outcome.
+- We have been expirimenting with different values for the weights of each loss (LAMBDA) to get the best visual outcome. See ![visual quality experimentation]([experiment-setup-visual-quality.md) and ![Quantitive evaluation]([[experiment-setup-visual-quality.md](Quantitative-evaluation)
 #### Discriminator loss
 The discriminator loss is the adversarial loss - pred(fake monet)=0 (MSELoss)
 ## Training
