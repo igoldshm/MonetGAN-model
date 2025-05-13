@@ -7,3 +7,4 @@ To test this, we explored the addition of a perceptual loss function, leveraging
 | ![Identity lambda = 1.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png)       | ![Identity lambda = 4.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_4.5_VGG_0.png)   |
 # FID Score
 # Conclusion
+We initially expected perceptual loss to improve stylization, but the results showed otherwise. As seen in the left image, adding perceptual loss actually made the generated painting look more realistic. This likely happened because the VGG-19 model, which the loss is based on, was trained on real-world photos and tends to emphasize photo-realistic features rather than painterly styles.
