@@ -1,6 +1,12 @@
 # MonetGAN - Monet-Style Painting Generation
 This repository contains an implementation of a Generative Adversarial Network (GAN) aimed at transforming photos into Monet-style paintings. The model was developed for the MonetGAN challenge on Kaggle.
 The goal of the challenge was to use a GAN to take input photos and generate Monet-style paintings. The challenge serves as an excellent introduction to GANs and image-to-image translation tasks.
+
+| Real Photo | Generated Monet Painting |
+|:-----------------------------:|:--------------------------------:|
+| ![Input smaple image from domain A](Real_photo.png)      | ![Identity lambda = 0.5, Cycle_lambda = 10, adversarial_lambda = 1](epoch_195_Cycle_10_Identity_1.5_VGG_0.png)   |
+
+
 ## Installation
 - Python 3.x
 - PyTorch 1.x
