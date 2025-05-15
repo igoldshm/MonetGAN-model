@@ -11,11 +11,33 @@ FID computation relies on estimating the **mean and covariance** of image featur
 - The **inception feature distribution is under-sampled**, which can lead to skewed statistical estimates.
 - This under-sampling often results in **artificially high FID scores**, even when the generated images are visually convincing.
 
-### Example Result
+### Results
 
-In our model trained for **195 epochs** with:
+Our models were trained for **195 epochs** with:
 - **Cycle consistency lambda = 10**
-- **Identity loss lambda = 1.5**
+- **Adversarial lambda = 1**
 
-We got an FID score of 127.2188, which is on the higher side. When we increased the identity loss λ, the generator started holding back on stylization, it got more conservative and stuck closer to the original photo. 
-That’s because a higher identity loss penalizes big changes, so the model avoids strong, expressive transformations. therefor, the results looked more content-preserving, and the FID score went up, likely because the images didn’t match the distribution of the bold style of real Monet paintings but became more realistically looking.
+| Identity Loss λ | FID Score |
+| --------------- | --------- |
+| 1.5             | 127.2188    |
+| 4.5             | 114.87    |
+
+- Two experiments were conducted, each trained for 195 epochs, with no VGG loss.
+
+| Identity Loss λ | VGG Loss (lambda=0.5) | FID Score |
+| --------------- | -------- | --------- |
+| 1.5             | ❌ No     | 127.2188    |
+| 1.5             | ✅ Yes    | 114.87    |
+
+- Two experiments were conducted, each trained for 195 epochs, one with VGG loss and one without.
+
+### Conclusion
+
+#### Increasing Identity Loss λ 
+
+When we increased the identity loss λ, the generator became more conservative, it held back on stylization and stayed closer to the original photo. This happens because a higher identity loss penalizes large changes, discouraging strong, expressive transformations. As a result, the outputs looked more content-preserving and realistic.
+
+#### Adding Perceptual Loss
+
+Interestingly, the FID score went up. This is likely because the images moved away from the bold, stylized distribution of real Monet paintings. However, since we were working with a small dataset, the FID at this level is quite noisy. With high scores and limited data, even a one point fluctuation could be caused by randomness, data loading differences, or noise in the Inception feature space.
+
