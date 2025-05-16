@@ -27,7 +27,7 @@ Our models were trained for **195 epochs** with:
 | Identity Loss λ | VGG Loss (lambda=0.5) | FID Score |
 | --------------- | -------- | --------- |
 | 1.5             | ❌ No     | 127.2188    |
-| 1.5             | ✅ Yes    | 114.87    |
+| 1.5             | ✅ Yes    | 128.0403    |
 
 - Two experiments were conducted, each trained for 195 epochs, one with VGG loss and one without.
 
