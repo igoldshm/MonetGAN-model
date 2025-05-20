@@ -26,10 +26,7 @@ git clone https://github.com/igoldshm/MonetGAN
 ## Challenges
 We trained our model using the Monet/Photo dataset from Kaggle. During preprocessing, we observed a significant imbalance between the number of real-world photos (7,028) and Monet-style paintings (300). This imbalance can affect the performance of the model by making the photo discriminator disproportionately strong (as it being trained on more samples). As a result, the training of the Monet-to-photo generator may suffer, and the effectiveness of the cycle consistency loss can be reduced, since the network struggles to maintain a balanced bidirectional mapping.
 ###  Solution
-To mitigate the effects of the imbalanced dataset, we applied a balanced strategy that combines the following techniques:
-- Data augmentation on the Monet dataset to increase visual diversity and reduce overfitting
-- Oversampling of Monet paintings to match the number of photo samples
-- Balanced batch sampling, ensuring each training batch contains an equal number of photos and Monet-style images
+To address the dataset imbalance, we used a balanced sampling strategy that ensures each training batch contains an equal number of photos and Monet-style images. We paired the two datasets and configured the dataloader to retrieve one photo–painting pair per iteration (real_A, real_B).
 
 ## Model
 In this project we used CycleGAN as our base architecture.
