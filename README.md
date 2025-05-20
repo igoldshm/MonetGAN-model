@@ -33,6 +33,7 @@ In this project we used CycleGAN as our base architecture.
 ### Generator  implementation
 In CycleGAN, there are two generators: one that converts real photos into fake Monet-style paintings (photo → Monet), and another that performs the reverse (Monet → photo). Both generators have the same architecture, consisting of an encoder and a decoder. Between them, after the encoder downsamples the input image into a lower-resolution feature map, there are 9 ResNet blocks that refine this feature map. These blocks help preserve spatial information while transforming the style and content, preparing it for reconstruction by the decoder.
 ### Discriminator  implementation
+We build a discriminator architecture based on CycleGAN paper.
 ### Loss calculation
 #### Generator loss
 The generator loss is the sum of four different losses:
